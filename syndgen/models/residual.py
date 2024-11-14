@@ -58,7 +58,7 @@ class Residual(nn.Module):
 
         if in_dim != out_dim and not project_skip_connection:
             warnings.warn(
-                "input dim does not match output dim, need to project the skip connection",
+                "input dim does not match output dim, need to project the skip connection to match the output dim",
                 NetworkArchitectureWarning,
             )
             project_skip_connection = True
@@ -88,7 +88,7 @@ class Residual(nn.Module):
         ]
 
         self._block = nn.Sequential(*sequence)
-        self._skip_connection = nn.Linear(in_dim, out_dim) if project_skip_connection else nn.Identity()
+        self._skip_connection = nn.Linear(in_dim, out_dim, bias=False) if project_skip_connection else nn.Identity()
 
         self.to(device)
 
