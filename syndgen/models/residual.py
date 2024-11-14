@@ -33,7 +33,6 @@ import torch.nn.functional as F
 from typing import (
     Union,
     Iterable,
-    Optional,
 )
 from ._warnings import NetworkArchitectureWarning
 
@@ -49,7 +48,7 @@ class Residual(nn.Module):
         in_dim: int,
         out_dim: int,
         *,
-        layer_dims: Optional[Iterable[int]] = (),
+        layer_dims: Iterable[int] = (),
         project_skip_connection: bool = False,
         device: Union[str, torch.tensor] = "cpu",
     ) -> None:
@@ -92,12 +91,12 @@ class Residual(nn.Module):
 
         self.to(device)
 
-    def forward(self, input_: torch.Tensor) -> torch.Tensor:
+    def forward(self, x: torch.Tensor) -> torch.Tensor:
         """Perform a forward call of the residual block.
         
         Parameters
         ----------
-        input_ : torch.Tensor
+        x : torch.Tensor
             The input data to pass through the residual block.
 
         Returns
@@ -106,5 +105,5 @@ class Residual(nn.Module):
             The computed output tensor.
         
         """
-        out = self._block(input_) + self._skip_connection(input_)
+        out = self._block(x) + self._skip_connection(x)
         return F.relu(out)

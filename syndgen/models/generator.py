@@ -74,3 +74,24 @@ class Generator(nn.Module):
             for i, (in_, out) in enumerate(zip(dims[:-1], dims[1:])):
                 sequence += [Residual(in_, out, layer_dims=residual_layer_dims[i])]
 
+        sequence += [nn.Linear(dims[-1], out_dim)]
+        decoder = nn.Sequential(*sequence)
+
+        self._decoder = decoder
+        self.to(device)
+
+    def forward(self, x: torch.Tensor) -> torch.Tensor:
+        """...
+        
+        Parameters
+        ----------
+        x : torch.Tensor
+            ...
+
+        Returns
+        -------
+        torch.Tensor
+            The decoded output tensor.
+        
+        """
+        return self._decoder(x)
