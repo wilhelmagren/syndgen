@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "syndgen"
+version = "0.1.0"
+description = "SYNthetic Data GENeration made easy for everyone, free and open-sourced."
+authors = [
+    "Wilhelm Ågren <wilhelmagren98@gmail.com>",
+]
+license = "MIT"
+readme = "README.md"
+
+packages = [{ include = "syndgen" }]
+homepage = "https://github.com/wilhelmagren/syndgen"
+repository = "https://github.com/wilhelmagren/syndgen"
+
+[tool.poetry.urls]
+"Homepage" = "https://github.com/wilhelmagren/syndgen"
+"Bug tracker" = "https://github.com/wilhelmagren/syndgen/issues"
+
+[tool.poetry.dependencies]
+python = ">=3.9,<3.13"
