@@ -42,7 +42,7 @@ class Generator(nn.Module):
     """Decoder neural network architecture."""
 
     def __init__(
-        self: Generator,
+        self,
         emb_dim: int,
         out_dim: int,
         *,
@@ -80,7 +80,7 @@ class Generator(nn.Module):
         self._decoder = decoder
         self.to(device)
 
-    def forward(self: Generator, x: torch.Tensor) -> torch.Tensor:
+    def forward(self, x: torch.Tensor) -> torch.Tensor:
         """...
         
         Parameters

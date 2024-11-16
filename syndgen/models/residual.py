@@ -93,7 +93,7 @@ class Residual(nn.Module):
 
         self.to(device)
 
-    def forward(self: Residual, x: torch.Tensor) -> torch.Tensor:
+    def forward(self, x: torch.Tensor) -> torch.Tensor:
         """Perform a forward call of the residual block.
         
         Parameters
