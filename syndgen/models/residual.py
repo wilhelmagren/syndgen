@@ -22,8 +22,10 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 File created: 2024-11-14
-Last updated: 2024-11-14
+Last updated: 2024-11-16
 """
+
+from __future__ import annotations
 
 import warnings
 import torch
@@ -91,7 +93,7 @@ class Residual(nn.Module):
 
         self.to(device)
 
-    def forward(self, x: torch.Tensor) -> torch.Tensor:
+    def forward(self: Residual, x: torch.Tensor) -> torch.Tensor:
         """Perform a forward call of the residual block.
         
         Parameters

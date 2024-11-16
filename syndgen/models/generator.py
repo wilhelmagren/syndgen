@@ -22,17 +22,17 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 File created: 2024-11-14
-Last updated: 2024-11-14
+Last updated: 2024-11-16
 """
+
+from __future__ import annotations
 
 import torch
 import torch.nn as nn
 
 from typing import (
-    Optional,
     Iterable,
     Union,
-    Tuple,
 )
 from .residual import Residual
 from ._errors import NetworkArchitectureError
@@ -42,7 +42,7 @@ class Generator(nn.Module):
     """Decoder neural network architecture."""
 
     def __init__(
-        self,
+        self: Generator,
         emb_dim: int,
         out_dim: int,
         *,
@@ -80,7 +80,7 @@ class Generator(nn.Module):
         self._decoder = decoder
         self.to(device)
 
-    def forward(self, x: torch.Tensor) -> torch.Tensor:
+    def forward(self: Generator, x: torch.Tensor) -> torch.Tensor:
         """...
         
         Parameters
