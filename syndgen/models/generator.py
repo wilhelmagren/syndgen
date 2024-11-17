@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 File created: 2024-11-14
-Last updated: 2024-11-16
+Last updated: 2024-11-17
 """
 
 from __future__ import annotations
@@ -46,8 +46,8 @@ class Generator(nn.Module):
         emb_dim: int,
         out_dim: int,
         *,
-        layer_dims: Iterable[int] = (),
-        residual_layer_dims: Iterable[Iterable[int]] = (()),
+        layer_dims: Iterable[int] = (128, ),
+        residual_layer_dims: Iterable[Iterable[int]] = ((128, ), ),
         device: Union[str, torch.device] = "cpu",
     ) -> None:
         """ """
