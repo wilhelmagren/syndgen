@@ -22,10 +22,11 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 File created: 2024-11-13
-Last updated: 2024-11-13
+Last updated: 2024-11-17
 """
 
 from syndgen import datasets  # noqa
+from syndgen import datautil  # noqa
 from syndgen import metadata  # noqa
 from syndgen import metrics  # noqa
 from syndgen import models  # noqa
@@ -39,7 +40,7 @@ import torch
 
 
 def set_global_seeds(seed: int) -> None:
-    """Set the seed to use for all of the used random number generators.
+    """Set the seed to use for all of the random number generators.
 
     Parameters
     ----------
