@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 File created: 2024-11-14
-Last updated: 2024-11-16
+Last updated: 2024-11-17
 """
 
 from __future__ import annotations
@@ -43,6 +43,7 @@ class Residual(nn.Module):
     """One-dimensional residual block for a neural network [1].
     
     [1] Kaiming He et al., 2015
+
     """
 
     def __init__(
