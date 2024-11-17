@@ -30,3 +30,13 @@ Install using pip like
 ```
 python3 -m pip install syndgen
 ```
+
+
+# Usage
+
+```python
+import syndgen as sg
+from syndgen.models import HCTGAN
+
+...
+```
