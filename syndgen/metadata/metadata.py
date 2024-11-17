@@ -22,15 +22,12 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 File created: 2024-11-16
-Last updated: 2024-11-16
+Last updated: 2024-11-17
 """
 
 from __future__ import annotations
 
-from typing import (
-    Any,
-    Dict,
-)
+from typing import Any
 
 
 class Metadata:
@@ -38,15 +35,20 @@ class Metadata:
 
     def __init__(self: Metadata) -> None:
         """"""
-        pass
+
+        self._tables = []
+        self._columns = {}
+        self._primary_keys = {}
+        self._foreign_keys = {}
+        self._table_relations = {}
 
     @classmethod
-    def from_dict(cls, d: Dict[str, Any]) -> Metadata:
+    def from_dict(cls, _dict: dict[str, Any]) -> Metadata:
         """Create a new ``Metadata`` instance from a dictionary.
 
         Parameters
         ----------
-        d : dict
+        _dict : dict
             The dictionary containing all key-value pairs of the metadata.
 
         Returns
@@ -56,4 +58,7 @@ class Metadata:
         
         """
 
-        return cls()
+        instance = cls()
+        for key, value in _dict.items():
+            setattr(instance, key, value)
+        return instance 
