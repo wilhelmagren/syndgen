@@ -2,6 +2,8 @@ from __future__ import annotations
 
 import pandas as pd
 
+from typing import Any
+
 
 class Transformer:
     """"""
@@ -33,3 +35,18 @@ class Transformer:
             pass
 
         self._fitted = True
+
+
+class IdentityTransform:
+    """"""
+
+    def fit(self, *args, **kwargs) -> None:
+        """"""
+
+    def transform(self, data: Any, *args, **kwargs) -> Any:
+        """"""
+        return data
+
+    def inverse_transform(self, data: Any, *args, **kwargs) -> Any:
+        """"""
+        return data
